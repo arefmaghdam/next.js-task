@@ -1,3 +1,4 @@
+import AddUser from "@/components/add-user/AddUser";
 import UsersComponent from "@/components/usersComponent/UsersComponent";
 import getAPI from "@/services/getAPI";
 
@@ -14,7 +15,7 @@ export default async function Users() {
   console.log(usersData);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-5">
       <div className="mb-8 text-2xl font-bold">Users</div>
       <div className="grid grid-cols-4 gap-4">
         {usersData.map((item: Users) => (
@@ -27,6 +28,7 @@ export default async function Users() {
             avatar={item.avatar}
           />
         ))}
+        <AddUser />
       </div>
       <button className="mt-8 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
         Update
