@@ -23,7 +23,7 @@ export default async function Users() {
 
       if (response.ok) {
         console.log(`User with id ${id} deleted successfully.`);
-        getAPI()
+        getAPI();
       } else {
         console.error("Error deleting user:", response.statusText);
       }
