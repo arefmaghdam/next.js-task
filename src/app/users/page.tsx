@@ -15,17 +15,22 @@ export default async function Users() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>users</div>
-      {usersData.map((item: Users) => (
-        <UsersComponent
-          id={item.id}
-          email={item.email}
-          firstName={item.first_name}
-          lastName={item.last_name}
-          avatar={item.avatar}
-        />
-      ))}
-      <button>update</button>
+      <div className="mb-8 text-2xl font-bold">Users</div>
+      <div className="grid grid-cols-4 gap-4">
+        {usersData.map((item: Users) => (
+          <UsersComponent
+            key={item.id}
+            id={item.id}
+            email={item.email}
+            firstName={item.first_name}
+            lastName={item.last_name}
+            avatar={item.avatar}
+          />
+        ))}
+      </div>
+      <button className="mt-8 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+        Update
+      </button>
     </main>
   );
 }
